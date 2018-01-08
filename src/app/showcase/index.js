@@ -6,7 +6,10 @@ require('angular')
         require('angular-ui-router'),
 
         /* Custom */
-        require('../signup')
+        require('../auth')
     ])
+    .directive('passwordMatch', require('./directives/password-match.js'))
     .config(require('./config'))
-    .config(require('./route'));
+    .config(require('./route'))
+    .controller('DashboardCtrl', require('./controllers/DashboardCtrl'))
+    .run(require('./auth'));

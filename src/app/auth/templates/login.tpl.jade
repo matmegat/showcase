@@ -1,0 +1,19 @@
+h1.text-center Login
+div.row
+    div.col-md-6.col-md-offset-3
+        form.form(name='form', ng-submit='vm.login(form)', novalidate='')
+            .form-group
+                label Username
+                input.form-control(type='username', name='username', ng-model='vm.user.username', required='', autocomplete='on')
+            .form-group
+                label Password
+                input.form-control(type='password', name='password', ng-model='vm.user.password', required='', autocomplete='off')
+            .form-group.has-error
+                p.help-block(ng-show='form.username.$error.required && form.password.$error.required && vm.submitted')
+                    | Please enter your username and password.
+                p.help-block(ng-show='vm.submitted') {{ vm.error }}
+            div
+                button.btn.btn-primary.btn-block.btn-login(type='submit')
+                    | Login
+                a.btn.btn-default.btn-block.btn-signup(ui-sref='signup')
+                    | Sign Up

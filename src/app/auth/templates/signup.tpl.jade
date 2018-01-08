@@ -1,0 +1,24 @@
+h1.text-center Sign Up
+div.row
+    div.col-md-6.col-md-offset-3
+        form.form(name='form', ng-submit='vm.signUp(form)', novalidate='')
+            .form-group
+                label Username
+                input.form-control(type='username', name='username', ng-model='vm.user.username', required='', autocomplete='off')
+            .form-group
+                label Password
+                input.form-control(type='password', id='password', name='password', ng-model='vm.user.password', required='', autocomplete='off')
+            .form-group
+                label Confirm Password
+                input.form-control(type='password', name='password_confirm', ng-model='vm.user.password_confirm', password-match="password", required='', autocomplete='off')
+            .form-group.has-error
+                p.help-block(ng-show='form.username.$error.required && form.password.$error.required && vm.submitted')
+                    | Please enter your username and passwords.
+                p.help-block(ng-show='form.password_confirm.$error.pwmatch && vm.submitted')
+                    | Passwords do not match.
+                p.help-block(ng-show='vm.submitted') {{ vm.error }}
+            div
+                button.btn.btn-primary.btn-block.btn-login(type='submit')
+                    | Sign Up
+                a.btn.btn-default.btn-block.btn-signup(ui-sref='login')
+                    | Already have an account ?

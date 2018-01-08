@@ -10,4 +10,4 @@ div(ng-if="vm.error")
     strong {{ vm.error }}
 div(ng-show="!vm.error")
     div(ng-repeat="user in vm.users")
-        div(user-item, value="user")
+        div.user-item(user-item, value="user")

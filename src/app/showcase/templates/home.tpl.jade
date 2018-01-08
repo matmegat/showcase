@@ -1,6 +1,13 @@
-h1 AugularJS showcase
-h4 
+h2
     | Welcome, 
     strong {{ vm.username }}
     | !
 a(href='#', ng-click="vm.logout()") Logout
+br
+br
+p The below is the list of random user profiles...
+div(ng-if="vm.error")
+    strong {{ vm.error }}
+div(ng-show="!vm.error")
+    div(ng-repeat="user in vm.users")
+        div(user-item, value="user")

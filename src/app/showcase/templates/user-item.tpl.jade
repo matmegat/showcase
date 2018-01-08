@@ -1,0 +1,18 @@
+div.row
+    div.col-sm-2
+        img.img-responsive.img-circle(src="{{ value.photo }}", alt="{{ value.name }}")
+    div.col-sm-10
+        | Name:
+        | {{ value.name }} {{ value.surname }}
+        br
+        | Gender:
+        | {{ value.gender }}
+        br
+        | Email:
+        | {{ value.email }}
+        br
+        | Birthday:
+        | {{ value.birthday.mdy }}
+        br
+        | Region:
+        | {{ value.region }}
